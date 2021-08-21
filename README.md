@@ -13,7 +13,10 @@ A Python script to filter the posts as found in the Instagram JSON backup. The s
 
 1. Clone/download the repo
 2. In your terminal, cd into the repo.
-3. Run `python filter_instagram_posts.py` (or `python3 filter_instagram_posts.py` on macOS).
+3. Choose the script to run, depending on your backup:
+  - If you're filtering a 2020 or earlier backup, use `python filter_instagram_posts.py` (or `python3 filter_instagram_posts.py` on macOS).
+  - If you're filtering a newer backup, use `python filter_instagram_data_2021.py` (or `python3 filter_instagram_data_2021.py` on macOS).
+  - If you're running into issues with either, try the other script. The dates above aren't exact (the earlier script was built using a 2020 backup and the 2021 script was built using a 2021 backup).
 4. Fill the required details.
 
 ## Known Issues
