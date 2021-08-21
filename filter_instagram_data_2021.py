@@ -36,7 +36,8 @@ def filter_media_list(criteria):
         for m in media_list
         if criteria["includes"] in m["media"][0][criteria["field"]]
     ]
-    write_dict = {"photos": filtered_list}
+    ordered_list = sorted(filtered_list, key=lambda post: post["media"][0]["creation_timestamp"])
+    write_dict = {"photos": ordered_list}
 
     with open(OUTPUT_FILE_ABS, "w") as output_file:
         output_file.write(json.dumps(write_dict))
