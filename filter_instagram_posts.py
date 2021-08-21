@@ -35,7 +35,9 @@ def filter_media_list(criteria):
     type criteria: dictionary with two keys - field and includes
     """
     filtered_list = [
-        m for m in media_list if criteria["includes"] in m[criteria["field"]]
+        m
+        for m in media_list
+        if criteria["includes"].lower() in m[criteria["field"]].lower()
     ]
     ordered_list = sorted(filtered_list, key=lambda post: post["taken_at"])
     write_dict = {"photos": ordered_list}
